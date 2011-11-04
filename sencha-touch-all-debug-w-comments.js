@@ -62325,7 +62325,8 @@ Ext.define('Ext.field.Slider', {
      */
     setThumbsDisabled: function(disable) {
         var me = this,
-            thumbs = me.thumbs,
+            // Fix crash when disabling sliderfield
+            thumbs = me.getThumbs(),
             ln     = thumbs.length,
             i;
 
