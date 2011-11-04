@@ -21655,7 +21655,8 @@ Ext.anims = {
         before: function(el) {
             var fromOpacity = 1,
                 toOpacity = 1,
-                curZ = el.getStyle('z-index') == 'auto' ? 0 : el.getStyle('z-index'),
+                // Fix z-index concatenation on Anim.run
+                curZ = el.getStyle('z-index') == 'auto' ? 0 : el.getStyle('z-index') * 1,
                 zIndex = curZ;
 
             if (this.out) {
