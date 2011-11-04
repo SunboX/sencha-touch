@@ -59709,7 +59709,8 @@ Ext.define('Ext.dataview.List', {
         for (i = 0; i < previousIndexLn; i++) {
             oldItemWithHeader = previousHeaderIndices[i];
             if (newHeaderIndices.indexOf(oldItemWithHeader) == -1) {
-                oldItemWithHeader = items[store.indexOf(oldItemWithHeader)];
+                // Fix Ext.List group headers duplicates
+                oldItemWithHeader = items[oldItemWithHeader.index];
                 if (oldItemWithHeader) {
                     me.doRemoveHeader(oldItemWithHeader);
                 }
