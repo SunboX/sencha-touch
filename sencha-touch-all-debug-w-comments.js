@@ -52365,7 +52365,7 @@ Ext.define('Ext.Button', {
             baseCls = Ext.baseCSSPrefix + 'iconalign-';
 
         element.removeCls(baseCls + oldAlignment);
-        if (this.getIcon()) {
+        if (this.getIconMask()) {
             element.addCls(baseCls + alignment);
         }
     },
