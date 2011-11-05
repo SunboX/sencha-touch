@@ -22808,7 +22808,7 @@ Ext.define('Ext.XTemplate', {
         try {
             me.fn.call(me, out, values, {}, 1, 1);
         } catch (e) {
-            Ext.log('Error: ' + e.message);
+            Ext.Logger.error('Error: ' + e.message);
         }
 
         return out;
