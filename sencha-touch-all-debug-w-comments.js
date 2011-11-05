@@ -48310,8 +48310,8 @@ Ext.define('Ext.util.GeoLocation', {
         }
         try {
             this.watchOperation = this.provider.watchPosition(
-                Ext.createDelegate(this.fireUpdate, this),
-                Ext.createDelegate(this.fireError, this),
+                Ext.Function.bind(this.fireUpdate, this),
+                Ext.Function.bind(this.fireError, this),
                 this.parseOptions());
         }
         catch(e) {
